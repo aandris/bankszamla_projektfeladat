@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 
 namespace bankszamla_projekt
@@ -11,6 +12,8 @@ namespace bankszamla_projekt
     {
         static void Main(string[] args)
         {
+
+
         }
     }
 }
