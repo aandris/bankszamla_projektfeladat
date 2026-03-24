@@ -71,8 +71,19 @@ namespace bankszamla_projekt
             if (Withdraw(osszeg))
             {
                 celSzamla.Deposit(osszeg);
-                string sor = DateTime.Now.ToString() + ";utalás;" + Egyenleg;
-                Naplo.Add(sor);
+                string bejegyzes = DateTime.Now.ToString() + ";utalás;" + Egyenleg;
+                Naplo.Add(bejegyzes);
+                return true;
+            }
+            return false;
+        }
+        public bool HitelKeretModositasa(decimal ujHitelkeret)
+        {
+            if (ujHitelkeret >= 0 && ujHitelkeret <= KezdoEgyenleg * 0.2m)
+            {
+                Hitelkeret = ujHitelkeret;
+                string bejegyzes = DateTime.Now.ToString() + ";hitelkeret módosítása;" + Egyenleg;
+                Naplo.Add(bejegyzes);
                 return true;
             }
             return false;
