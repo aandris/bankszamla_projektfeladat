@@ -65,6 +65,18 @@ namespace bankszamla_projekt
             }
             return false;
         }
+        public bool Utalas(Account celSzamla, decimal osszeg)
+        {
+
+            if (Withdraw(osszeg))
+            {
+                celSzamla.Deposit(osszeg);
+                string sor = DateTime.Now.ToString() + ";utalás;" + Egyenleg;
+                Naplo.Add(sor);
+                return true;
+            }
+            return false;
+        }
 
     }
 }
