@@ -44,5 +44,16 @@ namespace bankszamla_projekt
             return Egyenleg; 
         }
 
+        public void Deposit(decimal osszeg)
+        {
+            if (osszeg > 0)
+            {
+                Egyenleg = Egyenleg + osszeg;
+
+                string bejegyzes = DateTime.Now.ToString() + ";befizetés;" + Egyenleg;
+                Naplo.Add(bejegyzes);
+            }
+        }
+
     }
 }
