@@ -54,6 +54,17 @@ namespace bankszamla_projekt
                 Naplo.Add(bejegyzes);
             }
         }
+        public bool Withdraw(decimal osszeg)
+        {
+            if (osszeg > 0 && (Egyenleg + Hitelkeret) >= osszeg)
+            {
+                Egyenleg = Egyenleg - osszeg;
+                string bejegyzes = DateTime.Now.ToString() + ";kifizetés;" + Egyenleg;
+                Naplo.Add(bejegyzes);
+                return true;
+            }
+            return false;
+        }
 
     }
 }
