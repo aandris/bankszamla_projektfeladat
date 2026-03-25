@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -88,6 +89,16 @@ namespace bankszamla_projekt
             }
             return false;
         }
+        public void NaploMentes()
+        {
+            string fajlnev = Szamlaszam + ".txt";
+            StreamWriter sw = new StreamWriter(fajlnev);
 
+            for (int i = 0; i < Naplo.Count; i++)
+            {
+                sw.WriteLine(Naplo[i]);
+            }
+            sw.Close();
+        }
     }
 }
