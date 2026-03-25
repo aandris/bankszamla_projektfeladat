@@ -89,6 +89,15 @@ namespace bankszamla_projekt
             }
             return false;
         }
+
+        public override string ToString()
+        {
+            return "Számlaszám: " + Szamlaszam +
+                   " | Név: " + TulajdonosNeve +
+                   " | Egyenleg: " + Egyenleg + " Ft" +
+                   " | Hitelkeret: " + Hitelkeret + " Ft";
+        }
+
         public void NaploMentes()
         {
             string fajlnev = Szamlaszam + ".txt";
