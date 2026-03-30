@@ -144,6 +144,31 @@ namespace bankszamla_projekt
                 Console.WriteLine("Számla nem található.");
             }
         }
+        static void UtalasMenu()
+        {
+            Console.Write("Forrás számlaszám: ");
+            Account forras = SzamlaKereses(Console.ReadLine());
+            Console.Write("Cél számlaszám: ");
+            Account cel = SzamlaKereses(Console.ReadLine());
+
+            if (forras != null && cel != null)
+            {
+                Console.Write("Összeg: ");
+                decimal osszeg = decimal.Parse(Console.ReadLine());
+                if (forras.Utalas(cel, osszeg))
+                {
+                    Console.WriteLine("Sikeres utalás.");
+                }
+                else
+                {
+                    Console.WriteLine("Hiba: Nincs elég fedezet!");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Valamelyik számla nem létezik!");
+            }
+        }
 
     }
 }
