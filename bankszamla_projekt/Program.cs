@@ -22,7 +22,7 @@ namespace bankszamla_projekt
             while (!kilep)
             {
                 Console.Clear();
-                Console.WriteLine("=== EGYSZERŰ BANKI RENDSZER ===");
+                Console.WriteLine("BANKI UTALÁS PROGRAM");
                 Console.WriteLine("1. Számlák listázása");
                 Console.WriteLine("2. Befizetés");
                 Console.WriteLine("3. Kifizetés");
@@ -36,30 +36,42 @@ namespace bankszamla_projekt
                 switch (valasztas)
                 {
                     case "1":
-
-                        break;
+                        {
+                            Listazas();
+                            break;
+                        }
                     case "2":
-
-                        break;
+                        {
+                            BefizetesMenu();
+                            break;
+                        }
                     case "3":
-
-                        break;
+                        {
+                            KifizetesMenu();
+                            break;
+                        }
                     case "4":
-
-                        break;
+                        {
+                            UtalasMenu();
+                            break;
+                        }
                     case "5":
-
-                        break;
+                        {
+                            HitelkeretMenu();
+                            break;
+                        }
                     case "6":
-
-                        kilep = true;
-                        break;
-
+                        {
+                            MindenNaploMentese();
+                            kilep = true;
+                            break;
+                        }
                     default:
-                        Console.WriteLine("Érvénytelen választás!");
-                        break;
+                        {
+                            Console.WriteLine("Érvénytelen választás!");
+                            break;
+                        }
                 }
-
                 if (!kilep)
                 {
                     Console.WriteLine("\nNyomjon meg egy billentyűt a folytatáshoz...");
