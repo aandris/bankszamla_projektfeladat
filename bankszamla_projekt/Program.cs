@@ -122,6 +122,28 @@ namespace bankszamla_projekt
                 Console.WriteLine("Számla nem található.");
             }
         }
+        static void KifizetesMenu()
+        {
+            Console.Write("Adja meg a számlaszámot: ");
+            Account a = SzamlaKereses(Console.ReadLine());
+            if (a != null)
+            {
+                Console.Write("Kivenni kívánt összeg: ");
+                decimal osszeg = decimal.Parse(Console.ReadLine());
+                if (a.Withdraw(osszeg))
+                {
+                    Console.WriteLine("Sikeres kifizetés.");
+                }
+                else
+                {
+                    Console.WriteLine("Hiba: Nincs elég fedezet!");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Számla nem található.");
+            }
+        }
 
     }
 }
