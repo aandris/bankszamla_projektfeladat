@@ -106,6 +106,22 @@ namespace bankszamla_projekt
                 Console.WriteLine(szamlak[i].ToString());
             }
         }
+        static void BefizetesMenu()
+        {
+            Console.Write("Adja meg a számlaszámot: ");
+            Account a = SzamlaKereses(Console.ReadLine());
+            if (a != null)
+            {
+                Console.Write("Összeg: ");
+                decimal osszeg = decimal.Parse(Console.ReadLine());
+                a.Deposit(osszeg);
+                Console.WriteLine("Befizetés rögzítve.");
+            }
+            else
+            {
+                Console.WriteLine("Számla nem található.");
+            }
+        }
 
     }
 }
