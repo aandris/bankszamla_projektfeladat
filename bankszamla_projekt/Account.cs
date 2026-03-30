@@ -27,8 +27,8 @@ namespace bankszamla_projekt
 
             Naplo = new List<string>();
 
-            string sor = DateTime.Now.ToString() + ";Számlanyitás;" + Egyenleg;
-            Naplo.Add(sor);
+            string bejegyzes = DateTime.Now.ToString() + ";Számlanyitás;" + Egyenleg;
+            Naplo.Add(bejegyzes);
         }
 
      
@@ -92,10 +92,7 @@ namespace bankszamla_projekt
 
         public override string ToString()
         {
-            return "Számlaszám: " + Szamlaszam +
-                   " | Név: " + TulajdonosNeve +
-                   " | Egyenleg: " + Egyenleg + " Ft" +
-                   " | Hitelkeret: " + Hitelkeret + " Ft";
+            return "Számlaszám: " + Szamlaszam + " | Név: " + TulajdonosNeve + " | Egyenleg: " + Egyenleg;
         }
 
         public void NaploMentes()
