@@ -169,6 +169,27 @@ namespace bankszamla_projekt
                 Console.WriteLine("Valamelyik számla nem létezik!");
             }
         }
-
+        static void HitelkeretMenu()
+        {
+            Console.Write("Számlaszám: ");
+            Account a = SzamlaKereses(Console.ReadLine());
+            if (a != null)
+            {
+                Console.Write("Új keret: ");
+                decimal uj = decimal.Parse(Console.ReadLine());
+                if (a.HitelKeretModositasa(uj))
+                {
+                    Console.WriteLine("Sikeres módosítás.");
+                }
+                else
+                {
+                    Console.WriteLine("Hiba: Túl magas hitelkeret!");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Számla nem található!");
+            }
+        }
     }
 }
