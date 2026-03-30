@@ -33,8 +33,40 @@ namespace bankszamla_projekt
 
                 string valasztas = Console.ReadLine();
 
+                switch (valasztas)
+                {
+                    case "1":
+                       
+                        break;
+                    case "2":
+                      
+                        break;
+                    case "3":
+                       
+                        break;
+                    case "4":
+                      
+                        break;
+                    case "5":
+                       
+                        break;
+                    case "6":
+                      
+                        kilep = true;
+                        break;
 
+                    default:
+                        Console.WriteLine("Érvénytelen választás!");
+                        break;
+                }
+
+                if (!kilep)
+                {
+                    Console.WriteLine("\nNyomjon meg egy billentyűt a folytatáshoz...");
+                    Console.ReadKey();
+                }
             }
+
         }
         static void AdatokBetoltese(string fajlnev)
         {
@@ -54,6 +86,17 @@ namespace bankszamla_projekt
             }
 
             sr.Close();
+        }
+        static Account SzamlaKereses(string szamlaszam)
+        {
+            for (int i = 0; i < szamlak.Count; i++)
+            {
+                if (szamlak[i].GetSzamlaszam() == szamlaszam)
+                {
+                    return szamlak[i];
+                }
+            }
+            return null;
         }
     }
 }
