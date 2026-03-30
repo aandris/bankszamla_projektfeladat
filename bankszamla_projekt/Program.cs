@@ -98,5 +98,14 @@ namespace bankszamla_projekt
             }
             return null;
         }
+        static void Listazas()
+        {
+            Console.WriteLine("\nAktuális számlák:");
+            for (int i = 0; i < szamlak.Count; i++)
+            {
+                Console.WriteLine(szamlak[i].ToString());
+            }
+        }
+
     }
 }
