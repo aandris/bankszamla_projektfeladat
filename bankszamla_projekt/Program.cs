@@ -36,22 +36,22 @@ namespace bankszamla_projekt
                 switch (valasztas)
                 {
                     case "1":
-                       
+
                         break;
                     case "2":
-                      
+
                         break;
                     case "3":
-                       
+
                         break;
                     case "4":
-                      
+
                         break;
                     case "5":
-                       
+
                         break;
                     case "6":
-                      
+
                         kilep = true;
                         break;
 
@@ -191,5 +191,13 @@ namespace bankszamla_projekt
                 Console.WriteLine("Számla nem található!");
             }
         }
+        static void MindenNaploMentese()
+        {
+            for (int i = 0; i < szamlak.Count; i++)
+            {
+                szamlak[i].NaploMentes();
+            }
+        }
+
     }
 }
