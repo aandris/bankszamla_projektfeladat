@@ -63,6 +63,7 @@ namespace bankszamla_projekt
                     case "6":
                         {
                             MindenNaploMentese();
+                            Console.WriteLine("A mentés sikeresen megtörtént minden számlához!");
                             kilep = true;
                             break;
                         }
